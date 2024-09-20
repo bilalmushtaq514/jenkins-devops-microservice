@@ -56,7 +56,7 @@ pipeline {
 		}
 		stage('Push Docker Image'){
 			steps {
-				 withDockerRegistry([credentialsId: 'dockerhub']) {
+				withDockerRegistry([url: 'https://index.docker.io/v1/', credentialsId: 'dockerhub']) {
             sh """
             docker push ${dockerImage.id}
             docker tag ${dockerImage.id} ${dockerImage.id}:latest
@@ -66,7 +66,7 @@ pipeline {
 		} 
 	} 
 	}
-	
+
 	post {
 		always {
 			echo 'I am awsome'
