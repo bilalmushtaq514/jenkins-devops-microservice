@@ -139,7 +139,7 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>2.5.14</version> 
+			<version>2.5.8</version> 
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -240,10 +240,6 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</repository>
-		<repository>
-			<id>central</id>
-			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 	</repositories>
 
