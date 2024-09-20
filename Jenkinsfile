@@ -17,16 +17,15 @@ pipeline {
 			steps {
 				echo "Build"
 				
-				echo "build"
 			}
 		}
 		stage('Test') {
-			step {
+			steps {
 				echo "Test"
 			}
 		}
 		stage('Integration Test') {
-			step {
+			steps {
 				echo "Integration Test"
 			}
 		} 
