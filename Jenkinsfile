@@ -70,7 +70,7 @@ pipeline {
 			}
 		} 
 	} 
-
+	}
 	post {
 		always {
 			echo 'I am awsome'
