@@ -59,7 +59,7 @@ pipeline {
 				withDockerRegistry([url: 'https://index.docker.io/v1/', credentialsId: 'dockerhub']) {
             sh """
             docker push ${dockerImage.id}
-            docker tag ${dockerImage.id} ${dockerImage.id}:latest
+            docker tag ${dockerImage.id}:latest
             docker push ${dockerImage.id}:latest
             """
 			}
