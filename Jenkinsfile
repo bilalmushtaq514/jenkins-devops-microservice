@@ -56,18 +56,17 @@ pipeline {
 		}
 		stage('Push Docker Image'){
 			steps {
-				script {
-					docker.withRegistery('', 'dockerhub') {
-					dockerImage.push();
-					dockerImage.push('latest');
-					}
-				}
-			// 	withDockerRegistry([url: 'https://index.docker.io/v1/', credentialsId: 'dockerhub']) {
-            // sh """
-            // docker push ${dockerImage.id}
-            // docker tag ${dockerImage.id}:latest
+				// script {
+				// 	docker.withRegistery('', 'dockerhub') {
+				// 	dockerImage.push();
+				// 	dockerImage.push('latest');
+				// 	}
+				// }
+				withDockerRegistry([url: 'https://index.docker.io/v1/', credentialsId: 'dockerhub']) {
+            sh "docker push ${dockerImage.id}"
+
+			// docker tag ${dockerImage.id}:latest
             // docker push ${dockerImage.id}:latest
-            // """
 			}
 		} 
 	} 
