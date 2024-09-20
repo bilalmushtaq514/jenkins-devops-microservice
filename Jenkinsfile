@@ -50,14 +50,14 @@ pipeline {
 			steps {
 				// docker build -t bilalmushtaq39/aks-test:$env.BUILD_TAG
 				script {
-					docker.build("bilalmushtaq39/aks-test:${env.BUILD_TAG}")
+					dockerImage = docker.build("bilalmushtaq39/aks-test:${env.BUILD_TAG}")
 				}
 			}
 		}
 		stage('Push Docker Image'){
 			steps {
 				script {
-					docker.withRegistery('', 'dockerhub'){
+					docker.withRegistery('', 'dockerhub') {
 					dockerImage.push();
 					dockerImage.push('latest');
 					}
